@@ -12,13 +12,33 @@ function user_controller_create(){
 
 function user_controller_insert($request){
     require(MODEL_DIR.'/user.php');
+    require(VERIF_DIR);
+
     //Verifier que le nom dutilisateur nexiste pas
     if(user_model_exist($request)){
         $_SESSION["erreur"] = "Le nom d'utilisateur existe deja!";
         header("Location: ?module=user&action=create");
     }
-    //si le nom dutilisateur existe, renvoyer un message derreur
-    //si non...
+
+    //verifier que le nom est valide
+    if(strlen($request["nom"]) < 2 
+                || strlen($request["nom"]) > 25 
+                || !containLetterAndSpace($request["nom"])){
+
+        $_SESSION["erreur"] = "Le nom est invalide!";
+        header("Location: ?module=user&action=create");
+    }
+
+    //verifier le mot de passe 
+    if(strlen($request["motDePasse"]) < 6 
+                || strlen($request["motDePasse"]) > 20 
+                || !containLetterAndDigit($request["motDePasse"])){
+        
+        $_SESSION["erreur"] = "Le mot de passe est invalide!";
+        header("Location: ?module=user&action=create");
+    }
+    si le nom dutilisateur existe, renvoyer un message derreur
+    si non...
     user_model_insert($request);
     header("Location: ?module=user&action=index");
 }

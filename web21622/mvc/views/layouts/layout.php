@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="resources/css/style.css">
 </head>
 <body>
-
+    <nav>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+    </nav>
     <div class="container">
         <?php echo $content; ?>
     </div>

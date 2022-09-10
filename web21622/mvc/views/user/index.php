@@ -17,6 +17,9 @@
       <td><a href="?module=user&action=view&id=<?php echo $row['userId']; ?>">Editer</a></td>
       <td><form action="?module=user&action=delete" method="post"><input type="hidden" name="userId" value="<?php echo $row['userId'] ?>"><input type="submit" Value="Effacer"></form></td>
     </tr>
-  <?php } ?>
+
+    
+  <?php } 
+  ?>
   <tbody>
 </table>
