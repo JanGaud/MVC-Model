@@ -5,6 +5,12 @@ body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: grey;
   }
+
+  header{
+    background-color: blueviolet;
+    height: 100px;
+    width: 100%;
+  }
   
   table.listing {
       border-spacing: 0px;
