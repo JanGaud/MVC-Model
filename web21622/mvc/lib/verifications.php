@@ -15,7 +15,7 @@ function containLetterAndSpace($inputString){
 }
 
 
-// retourne faux si le mdp ne contient ps au moins 1 lettre et un chiffre
+// retourne faux si le mdp ne contient pas au moins 1 lettre et un chiffre
 function containLetterAndDigit($inputString){
     $lettre = false;
     $chiffre = false; 

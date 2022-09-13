@@ -23,8 +23,8 @@ function user_controller_insert($request){
     //verifier que le nom est valide
     if(strlen($request["nom"]) < 2 
                 || strlen($request["nom"]) > 25 
-                || !containLetterAndSpace($request["nom"])){
-
+                || !containLetterAndSpace($request["nom"]));
+    {
         $_SESSION["erreur"] = "Le nom est invalide!";
         header("Location: ?module=user&action=create");
     }
@@ -32,13 +32,13 @@ function user_controller_insert($request){
     //verifier le mot de passe 
     if(strlen($request["motDePasse"]) < 6 
                 || strlen($request["motDePasse"]) > 20 
-                || !containLetterAndDigit($request["motDePasse"])){
-        
+                || !containLetterAndDigit($request["motDePasse"]));
+    {
         $_SESSION["erreur"] = "Le mot de passe est invalide!";
         header("Location: ?module=user&action=create");
     }
-    si le nom dutilisateur existe, renvoyer un message derreur
-    si non...
+    // si le nom dutilisateur existe, renvoyer un message derreur
+    // si non...
     user_model_insert($request);
     header("Location: ?module=user&action=index");
 }
