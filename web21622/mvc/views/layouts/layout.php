@@ -8,15 +8,22 @@
     <link rel="stylesheet" href="resources/css/style.css">
 </head>
 <body>
+    
+    <header>
     <nav>
-        <a href=""></a>
-        <a href=""></a>
-        <a href=""></a>
-        <a href=""></a>
-        <a href=""></a>
+        <div class="navImg">
+            <img src="./resources/img/WebDevLogo.png" alt="">
+        </div>
+            <a href="#">Forum</a>
+            <a href="#">Inscription</a>
+            <a href="#">Connectez-vous</a>
     </nav>
-    <div class="container">
-        <?php echo $content; ?>
-    </div>
+    </header>
+
+    <main class="centerMain">
+        <?php
+           echo $content;
+        ?>
+    </main>
 </body>
 </html>

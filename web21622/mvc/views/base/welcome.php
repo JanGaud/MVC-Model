@@ -1,10 +1,19 @@
-  <header>
-    <nav>
-      <div class="navImg">
-        <img src="web21622/mvc/resources/img/WebDevLogo.png" alt="">
-      </div>
-        <a href="#">Inscription</a>
-        <a href="#">Login</a>
-        <a href="#">Forum</a>
-    </nav>
-  </header>
+
+    <div class="comImg">
+        <img src=".\resources\img\Discussion.png" alt="">
+    </div>
+
+    <div>
+
+        <?php
+         foreach($data as $row){
+        ?>
+        <article>
+            <h3><?= $row['titre']?></h3>
+            <h4>Auteur: <?= $row['nom']?></h4>
+            <small>Date: <?= substr($row['date_publication'], 0, 10);?></small>
+            <p><?= $row['article']?></p>
+        </article>
+        <?php }?>
+
+    </div>

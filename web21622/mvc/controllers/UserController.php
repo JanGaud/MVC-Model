@@ -37,8 +37,8 @@ function user_controller_insert($request){
         $_SESSION["erreur"] = "Le mot de passe est invalide!";
         header("Location: ?module=user&action=create");
     }
-    si le nom dutilisateur existe, renvoyer un message derreur
-    si non...
+    // si le nom dutilisateur existe, renvoyer un message derreur
+    // si non...
     user_model_insert($request);
     header("Location: ?module=user&action=index");
 }
