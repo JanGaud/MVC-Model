@@ -1,4 +1,6 @@
-<form action="index.php?module=user&action=insert" method="post">
+<form class="inscription" action="index.php?module=user&action=insert" method="post">
+        <h3>Inscription</h3>
+
         <label>
             Nom
             <input type="text" name="nom">
@@ -17,8 +19,8 @@
             <input type="password" name="motDePasse">
         </label>
         <input type="submit">
-    </form>
-    <div>
+</form>
+    <div class="erreur">
         <?php
             if(isset($_SESSION["erreur"])){
                 echo $_SESSION["erreur"];

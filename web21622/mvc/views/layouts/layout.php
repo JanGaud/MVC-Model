@@ -27,7 +27,7 @@
     </main>
 
     <footer>
-            <small>© Tous droits réservés - 2016</small> 
+            <small>© Tous droits réservés - 2022</small> 
     </footer>
 </body>
 </html>
