@@ -18,13 +18,13 @@
             Mot de passe
             <input type="password" name="motDePasse">
         </label>
-        <input type="submit">
-</form>
-    <div class="erreur">
+        <div class="erreurAlign"><input type="submit">    
+        <div class="erreur">
         <?php
             if(isset($_SESSION["erreur"])){
                 echo $_SESSION["erreur"];
                 unset($_SESSION["erreur"]);
             }
         ?>
-    </div>
+        </div></div>
+</form>
