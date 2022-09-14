@@ -12,6 +12,4 @@ function render($file, $data = null)
     include_once($layout_file);
 }
 
-
-
 ?>

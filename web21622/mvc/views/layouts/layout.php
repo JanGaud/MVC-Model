@@ -25,5 +25,9 @@
            echo $content;
         ?>
     </main>
+
+    <footer>
+            <small>© Tous droits réservés - 2016</small> 
+    </footer>
 </body>
 </html>
