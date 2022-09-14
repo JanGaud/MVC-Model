@@ -37,7 +37,13 @@ body{
     font-size: 16px;
   }
 
+  th{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
   
+  td{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
 /*------------------------------------------------------Navigation-------------------------------------------------------------*/
   header{
     background-color: inherit;
@@ -54,9 +60,11 @@ body{
   nav a{
     width: auto;
     height: auto;
+    background-color: #ffffff0c;
     color: rgb(255, 255, 255);
     text-decoration: none;
     border: 1px rgb(255, 255, 255) dotted;
+    border-radius: 5px;
     padding: 5px;
     font-size: 20px;
     margin-right: 50px;
@@ -64,8 +72,9 @@ body{
   }
 
   nav a:hover{
+    background-color: rgba(255, 255, 255, 0);
     color: rgb(100, 213, 239);
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0);
     text-decoration:overline rgba(255, 0, 98, 0.815);
     transition: 0.9s;
   }
@@ -202,6 +211,8 @@ body{
   .inscription input{
     width: 180px;
     align-self: center;
+    border: none;
+    border-radius: 5px;
   }
 
   .inscription h3{
@@ -236,6 +247,26 @@ body{
   .erreur{
     color: red;
   }
+
+  
+   /*---------------------------------------------------------------------Table--------------------------------------------------*/
+
+  .listing{
+    margin-top: 100px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-color: rgba(248, 248, 255, 0.904);
+    box-shadow:
+      0 0 50px rgba(255, 255, 255, 0.815),        
+      -10px 0 20px rgba(255, 0, 98, 0.815),     
+      10px 0 20px rgba(0, 68, 255, 0.801);        
+    padding: 10px;
+   }
+
+   listing input[type="submit"]Ç
+   
 
   /*---------------------------------------------------------------------Footer--------------------------------------------------*/
 
