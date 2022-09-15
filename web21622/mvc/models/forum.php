@@ -14,7 +14,9 @@ function forum_model_view(){
 
 function forum_model_userArticle(){
     require(CONNEX_DIR);
-    $sql = "SELECT * FROM forum";
+    $sql = "INSERT INTO utilisateur (nom, mot_de_passe, date_naissance, nomUtilisateur) VALUES ('$nom','$motDePasse','$naissance','$utilisateur')";
+    mysqli_query($con, $sql);
+    mysqli_close($con);
 }
 
 ?>
