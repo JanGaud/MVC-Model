@@ -1,4 +1,4 @@
-<form class="inscription" index.php?module=user&action=edit" method="post">
+<form class="inscription" index.php?module="user&action=edit" method="post">
     <input type="hidden" name="userId" value="<?php echo $data['userId']; ?>">
         <label>
             Nom

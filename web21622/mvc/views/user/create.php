@@ -18,7 +18,7 @@
             Mot de passe
             <input type="password" name="motDePasse">
         </label>
-        <div class="erreurAlign"><input type="submit">    
+        <div class="erreurAlign"><input type="submit" value="Je m'inscris">    
         <div class="erreur">
         <?php
             if(isset($_SESSION["erreur"])){
@@ -26,5 +26,4 @@
                 unset($_SESSION["erreur"]);
             }
         ?>
-        </div></div>
 </form>

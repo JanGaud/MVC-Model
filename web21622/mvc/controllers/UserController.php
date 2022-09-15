@@ -10,6 +10,19 @@ function user_controller_create(){
     render(VIEW_DIR.'/user/create.php');
 }
 
+function user_controller_login(){
+    render(VIEW_DIR.'/user/login.php');
+}
+
+function user_controller_write(){
+    render(VIEW_DIR.'/user/write.php');
+}
+
+function user_controller_ownArticle(){
+    render(VIEW_DIR.'/user/userArticle.php');
+}
+
+
 function user_controller_insert($request){
     require(MODEL_DIR.'/user.php');
     require(VERIF_DIR);
