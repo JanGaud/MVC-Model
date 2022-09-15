@@ -6,4 +6,11 @@ function base_controller_index(){
     render(VIEW_DIR.'/base/welcome.php', $data);
 }
 
+function base_controller_login(){
+    require(MODEL_DIR.'/forum.php');
+    $data = forum_model_view();
+    render(VIEW_DIR.'/user/login.php', $data);
+}
+
+
 ?>

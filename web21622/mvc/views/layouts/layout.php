@@ -14,9 +14,9 @@
         <div class="navImg">
             <img src="./resources/img/WebDevLogo.png" alt="">
         </div>
-            <a href="#">Forum</a>
-            <a href="#">Inscription</a>
-            <a href="#">Connectez-vous</a>
+            <a href="?module=user&action=welcome">Forum</a>
+            <a href="?module=user&action=create">Inscription</a>
+            <a href="?module=user&action=login">Connectez-vous</a>
     </nav>
     </header>
 

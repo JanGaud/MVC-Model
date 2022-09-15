@@ -12,12 +12,13 @@
             Date de naissance
             <input type="date" name="date_naissance" value="<?php echo date_format(date_create($data['date_naissance']),"Y-m-d") ?>">
         </label>
-        <input type="submit">
+        <div class="flexRow"><input type="submit" value="Modifier">
+            <div class="erreur">
+                <?php
+                    if(isset($_SESSION["erreur"])){
+                        echo $_SESSION["erreur"];
+                    }
+                ?>
+            </div>
+        </div>
     </form>
-    <div>
-        <?php
-            if(isset($_SESSION["erreur"])){
-                echo $_SESSION["erreur"];
-            }
-        ?>
-    </div>

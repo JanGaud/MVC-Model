@@ -18,8 +18,12 @@ function user_controller_write(){
     render(VIEW_DIR.'/user/write.php');
 }
 
-function user_controller_ownArticle(){
-    render(VIEW_DIR.'/user/userArticle.php');
+function user_controller_article(){
+    render(VIEW_DIR.'/user/article.php');
+}
+
+function user_controller_forum(){
+    reder(VIEW_DIR. '/base/welcome.php');
 }
 
 
@@ -55,6 +59,8 @@ function user_controller_insert($request){
     user_model_insert($request);
     header("Location: ?module=user&action=index");
 }
+
+
 
 function user_controller_view($request){
     //print_r($request);,

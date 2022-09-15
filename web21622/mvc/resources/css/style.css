@@ -24,6 +24,11 @@ body{
     }
   }
 
+  h1{
+    color: white;
+    font-family: fantasy;
+  }
+
   h4, h3{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(73, 73, 73);
@@ -109,7 +114,6 @@ body{
   }
 
   article{
-    position: relative;
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -155,21 +159,18 @@ body{
   }
 
   article button{
-    width: fit-content;
-    position: absolute;
-    bottom: 5px;
-    right: 10px;
-    font-size: large;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.274);
-    background-color: rgba(255, 0, 0, 0.596);
+    border-radius: 10px;
   }
 
   article button:hover{
-    background-color: #44799cb9;
+    background-color: #275fc7b9;
     box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.274);
     transition: 0.5s;
+  }
+
+  .moreBtn{
+    display: flex;
+    justify-content: flex-end;
   }
 
    /*---------------------------------------------------------------------Inscription--------------------------------------------------*/
@@ -295,7 +296,7 @@ body{
     margin-top: 100px;
     padding: 30px;
     width: 50%;
-    min-height: 400px;
+    min-height: 450px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -318,6 +319,37 @@ body{
     height: 400px;
 
   }
+
+  .redaction input[type="submit"]{
+    width: fit-content;
+    width: fit-content;
+    margin-left: 44%;
+    margin-right: 44%;
+    bottom: 5px;
+    right: 10px;
+    font-size: large;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.274);
+    background-color: rgba(255, 0, 0, 0.596);
+   }
+
+   .redaction input[type="submit"]:hover{
+    background-color: #44799cb9;
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.274);
+    transition: 0.5s;
+  }
+
+   /*---------------------------------------------------------------------Mes-Articles--------------------------------------------------*/
+   .articleBtn{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+   }
+
+   .delete:hover{
+    background-color:red;
+   }
 
   /*---------------------------------------------------------------------Footer--------------------------------------------------*/
 
