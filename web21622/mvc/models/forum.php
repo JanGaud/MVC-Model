@@ -19,4 +19,13 @@ function forum_model_userArticle(){
     mysqli_close($con);
 }
 
+function get_articles($userId){
+    require(CONNEX_DIR);
+    $sql = "SELECT * FROM forum
+    JOIN utilisateur on forum.userId = utilisateur.userId WHERE utilisateur.userId = $userId ORDER BY date_publication DESC";
+    $result = mysqli_query($con, $sql);
+    $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    return $result;
+}
+
 ?>

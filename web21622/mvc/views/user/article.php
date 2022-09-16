@@ -1,15 +1,28 @@
 <div class="articleForum">
+    
+<?php 
+if(isset($_SESSION["loged"]) && $_SESSION["loged"] == true){
+    echo "user " . $_SESSION["userId"];
+}
+else{
+    echo "user disconnected";
+}
+?>
 <h1>Mes articles</h1>
 <button>Créer un nouvel article</button>
-<article>
-   <div class="flexRow"> <h4>Auteur:</h4> <div class="medaillon"><img src="./resources/img/avatar.webp" alt=""></div> </div> 
-    <div class="flexRowClose"><small>Date:</small>  <h3>titre</h3> </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio sit sint, quibusdam illum quae aliquam itaque similique voluptas adipisci doloremque quas nemo recusandae blanditiis iusto debitis illo cupiditate repellat tempora!</p>
-    <div class="articleBtn">
-        <button>Modifier</button>
-        <button class="delete">X</button>
-    </div>
-</article>
-<?php ?>
+
+<?php
+         foreach($data as $row){
+        ?>
+        <article>
+           <div class="flexRow"> <h4>Auteur: <?= $row['nom']?></h4> <div class="medaillon"><img src="./resources/img/avatar.webp" alt=""></div> </div> 
+            <div class="flexRowClose"><small>Date: <?= substr($row['date_publication'], 0, 10);?></small>  <h3><?= $row['titre']?></h3> </div>
+            <p><?= $row['article']?></p>
+            <div class="moreBtn">
+                <button>...</button>
+            </div>
+        </article>
+        <?php }?>
+
 
 </div>

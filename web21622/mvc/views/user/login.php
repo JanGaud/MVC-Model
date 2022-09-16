@@ -1,4 +1,4 @@
-<form class="inscription" action="index.php?module=user&action=login" method="post">
+<form class="inscription" action="index.php?module=user&action=loginform" method="post">
         <h3>Connectez-vous</h3>
 
         <label>

@@ -10,13 +10,23 @@ function user_controller_create(){
     render(VIEW_DIR.'/user/create.php');
 }
 
+function user_controller_login(){
+    render(VIEW_DIR.'/user/login.php');
+}
 
 function user_controller_write(){
     render(VIEW_DIR.'/user/write.php');
 }
 
 function user_controller_article(){
-    render(VIEW_DIR.'/user/article.php');
+    require(MODEL_DIR.'/forum.php');
+    if(isset($_SESSION["loged"]) && $_SESSION["loged"] == true){
+        $data = get_articles($_SESSION["userId"]);
+        render(VIEW_DIR.'/user/article.php', $data);
+    }
+    else{
+        header("Location: ?module=user&action=login");
+    }
 }
 
 function user_controller_forum(){
@@ -75,23 +85,18 @@ function user_controller_insert($request){
 
 }
 
-function user_controller_login($request){
+function user_controller_loginform($request){
     require(MODEL_DIR.'/user.php');
-    $userId = log_user($request);
-    $_SESSION["erreur"] = $userId;
-        render("Location: ?module=user&action=login");
+    $userId =  log_user($request);
+    if($userId == null){
+        $_SESSION["erreur"] = "Login invalide";
+        header("Location: ?module=user&action=login");
         die();
-    // if($userId == null){
-    //     $_SESSION["erreur"] = "Login invalide";
-    //     header("Location: ?module=user&action=login");
-    //     die();
-    // }
-    // $_SESSION["loged"] = true;
-    // $_SESSION["userId"] = $userId;
-    // header("Location: ?module=user&action=article");
+    }
+    $_SESSION["loged"] = true;
+    $_SESSION["userId"] = $userId;
+    header("Location: ?module=user&action=article");
 }
-
-
 
 function user_controller_view($request){
     //print_r($request);,

@@ -4,10 +4,25 @@ function log_user($request){
     foreach($request as $key=>$value){
         $$key=mysqli_real_escape_string($con,$value);
     }
-    $sql = "SELECT salt FROM utilisateur WHERE nomUtilisateur = '$utilisateur'";
-    $salt = mysqli_query($con, $sql);
+    $sql = "SELECT salt, mot_de_passe, userId FROM utilisateur WHERE nomUtilisateur = '$utilisateur'";
+    $result = mysqli_query($con, $sql);
+    $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if(count($result) == 0){
+        return null;
+    }
+    $salt = $result[0]["salt"];
+    $mdp = $result[0]["mot_de_passe"];
     mysqli_close($con);
-    return $salt;
+    if(password_verify($salt . $motDePasse, $mdp)){
+        return $result[0]["userId"];
+    }    
+    return null;
+}
+
+function get_articles($userId){
+    $sql = "SELECT salt, mot_de_passe, userId FROM utilisateur WHERE nomUtilisateur = '$utilisateur'";
+    $result = mysqli_query($con, $sql);
+    $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
 
 function user_model_list(){
