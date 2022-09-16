@@ -28,4 +28,15 @@ function get_articles($userId){
     return $result;
 }
 
+function save_article($request){
+    $date = date("Y-m-d");
+    $userId = (int)$_SESSION['userId'];
+    require(CONNEX_DIR);
+    foreach($request as $key=>$value){
+        $$key=mysqli_real_escape_string($con,$value);
+    }
+    $sql = "INSERT INTO forum (titre, article, date_publication, userId) 
+    VALUES ('$titre', '$article', '$date', $userId)";  
+    $result = mysqli_query($con, $sql);
+}
 ?>

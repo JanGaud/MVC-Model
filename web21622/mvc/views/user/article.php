@@ -9,7 +9,7 @@ else{
 }
 ?>
 <h1>Mes articles</h1>
-<button>Créer un nouvel article</button>
+<a href="?module=user&action=write">Créer un article</a>
 
 <?php
          foreach($data as $row){

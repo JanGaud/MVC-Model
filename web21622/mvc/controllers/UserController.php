@@ -14,6 +14,17 @@ function user_controller_login(){
     render(VIEW_DIR.'/user/login.php');
 }
 
+function user_controller_saveArticle($request){
+    require(MODEL_DIR.'/forum.php');
+    if(isset($_SESSION["loged"]) && $_SESSION["loged"] == true){
+        save_article($request);
+        header("Location: ?module=user&action=article");
+    }
+    else{
+        header("Location: ?module=user&action=login");
+    }
+}
+
 function user_controller_write(){
     render(VIEW_DIR.'/user/write.php');
 }
