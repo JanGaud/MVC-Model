@@ -180,7 +180,7 @@ body{
     0 0 50px rgba(255, 255, 255, 0.815),        
     -10px 0 20px rgba(255, 0, 98, 0.815),     
     10px 0 20px rgba(0, 68, 255, 0.801);  
-    width: fit-content;
+    width: 30%;
     height: fit-content;
     border-radius: 10px;
     padding: 10px;

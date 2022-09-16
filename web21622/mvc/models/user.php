@@ -1,4 +1,15 @@
 <?php
+function log_user($request){
+    require(CONNEX_DIR);
+    foreach($request as $key=>$value){
+        $$key=mysqli_real_escape_string($con,$value);
+    }
+    $sql = "SELECT salt FROM utilisateur WHERE nomUtilisateur = '$utilisateur'";
+    $salt = mysqli_query($con, $sql);
+    mysqli_close($con);
+    return $salt;
+}
+
 function user_model_list(){
     require(CONNEX_DIR);
     $sql = "SELECT * FROM utilisateur";
@@ -13,8 +24,9 @@ function user_model_insert($request){
     foreach($request as $key=>$value){
         $$key=mysqli_real_escape_string($con,$value);
     }
-    $motDePasse = password_hash($motDePasse, PASSWORD_BCRYPT);
-    $sql = "INSERT INTO utilisateur (nom, mot_de_passe, date_naissance, nomUtilisateur) VALUES ('$nom','$motDePasse','$naissance','$utilisateur')";
+    $salt = rand();
+    $motDePasse = password_hash($salt . $motDePasse, PASSWORD_BCRYPT);
+    $sql = "INSERT INTO utilisateur (nom, mot_de_passe, date_naissance, nomUtilisateur, salt) VALUES ('$nom','$motDePasse','$naissance','$utilisateur','$salt')";
     mysqli_query($con, $sql);
     mysqli_close($con);
 }

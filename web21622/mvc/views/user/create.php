@@ -11,7 +11,7 @@
         </label>
         <label>
             Date de naissance
-            <input type="date" name="naissance">
+            <input type="text" name="naissance">
         </label>
 
         <label>

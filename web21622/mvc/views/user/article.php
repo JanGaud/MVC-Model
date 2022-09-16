@@ -1,5 +1,6 @@
 <div class="articleForum">
 <h1>Mes articles</h1>
+<button>Créer un nouvel article</button>
 <article>
    <div class="flexRow"> <h4>Auteur:</h4> <div class="medaillon"><img src="./resources/img/avatar.webp" alt=""></div> </div> 
     <div class="flexRowClose"><small>Date:</small>  <h3>titre</h3> </div>

@@ -12,9 +12,9 @@
     <header>
     <nav>
         <div class="navImg">
-            <img src="./resources/img/WebDevLogo.png" alt="">
+            <a href="./"><img src="./resources/img/WebDevLogo.png" alt=""></a>
         </div>
-            <a href="?module=user&action=welcome">Forum</a>
+            <a href="./">Forum</a>
             <a href="?module=user&action=create">Inscription</a>
             <a href="?module=user&action=login">Connectez-vous</a>
     </nav>
