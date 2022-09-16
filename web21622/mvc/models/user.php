@@ -19,12 +19,6 @@ function log_user($request){
     return null;
 }
 
-function get_articles($userId){
-    $sql = "SELECT salt, mot_de_passe, userId FROM utilisateur WHERE nomUtilisateur = '$utilisateur'";
-    $result = mysqli_query($con, $sql);
-    $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
-}
-
 function user_model_list(){
     require(CONNEX_DIR);
     $sql = "SELECT * FROM utilisateur";
